@@ -10,9 +10,9 @@ class Contact(models.Model):
     subject = models.CharField(verbose_name='Subject', max_length=200)
     message = models.TextField()
     create = models.DateTimeField(auto_now_add=True)
-    
+
     def get_absolute_url(self):
-        return reverse ('contact',)
+        return reverse('contact', self.pk)
 
     def __str__(self):
         return self.name
