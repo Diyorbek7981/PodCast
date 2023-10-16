@@ -1,0 +1,372 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from preview.colorlib.com/theme/mypodcast/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Sep 2023 14:06:30 GMT -->
+<head>
+    <title>My Podcast</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="My Podcast template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+    <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'plugins/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    <script nonce="d6baea36-406c-4bba-b12d-71249f2ca57f">(function (w, d) {
+        !function (a, b, c, d) {
+            a[c] = a[c] || {};
+            a[c].executed = [];
+            a.zaraz = {deferred: [], listeners: []};
+            a.zaraz.q = [];
+            a.zaraz._f = function (e) {
+                return async function () {
+                    var f = Array.prototype.slice.call(arguments);
+                    a.zaraz.q.push({m: e, a: f})
+                }
+            };
+            for (const g of ["track", "set", "debug"]) a.zaraz[g] = a.zaraz._f(g);
+            a.zaraz.init = () => {
+                var h = b.getElementsByTagName(d)[0], i = b.createElement(d), j = b.getElementsByTagName("title")[0];
+                j && (a[c].t = b.getElementsByTagName("title")[0].text);
+                a[c].x = Math.random();
+                a[c].w = a.screen.width;
+                a[c].h = a.screen.height;
+                a[c].j = a.innerHeight;
+                a[c].e = a.innerWidth;
+                a[c].l = a.location.href;
+                a[c].r = b.referrer;
+                a[c].k = a.screen.colorDepth;
+                a[c].n = b.characterSet;
+                a[c].o = (new Date).getTimezoneOffset();
+                if (a.dataLayer) for (const n of Object.entries(Object.entries(dataLayer).reduce(((o, p) => ({...o[1], ...p[1]})), {}))) zaraz.set(n[0], n[1], {scope: "page"});
+                a[c].q = [];
+                for (; a.zaraz.q.length;) {
+                    const q = a.zaraz.q.shift();
+                    a[c].q.push(q)
+                }
+                i.defer = !0;
+                for (const r of [localStorage, sessionStorage]) Object.keys(r || {}).filter((t => t.startsWith("_zaraz_"))).forEach((s => {
+                    try {
+                        a[c]["z_" + s.slice(7)] = JSON.parse(r.getItem(s))
+                    } catch {
+                        a[c]["z_" + s.slice(7)] = r.getItem(s)
+                    }
+                }));
+                i.referrerPolicy = "origin";
+                i.src = "https://preview.colorlib.com/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(a[c])));
+                h.parentNode.insertBefore(i, h)
+            };
+            ["complete", "interactive"].includes(b.readyState) ? zaraz.init() : a.addEventListener("DOMContentLoaded", zaraz.init)
+        }(w, d, "zarazData", "script");
+    })(window, document);</script>
+</head>
+<body>
+<div class="super_container">
+
+    <header class="header trans_400">
+
+        <div class="logo">
+            <a href="#"><span>my</span>podcast<img src="{% static 'images/play.png' %}" alt></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
+                        <nav class="main_nav">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About</a></li>
+                                <li><a href="{% url 'episodes' %}">Episodes</a></li>
+                                <li><a href="{% url 'blog' %}">Blog</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_right d-flex flex-row align-items-start justify-content-start">
+
+            <div class="submit"><a href="#">Submit a Podcast</a></div>
+
+            <div class="social">
+                <ul class="d-flex flex-row align-items-start justify-content-start">
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        </div>
+    </header>
+
+    <div class="menu">
+        <div class="menu_content d-flex flex-column align-items-end justify-content-start">
+            <ul class="menu_nav_list text-right">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'episodes' %}">Episodes</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+            <div class="menu_extra d-flex flex-column align-items-end justify-content-start">
+                <div class="menu_submit"><a href="#">Submit your podcast</a></div>
+                <div class="social">
+                    <ul class="d-flex flex-row align-items-start justify-content-start">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block content %}
+
+
+
+
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer_logo_row">
+                <div class="col d-flex flex-row align-items-center justify-content-center">
+                    <div class="logo">
+                        <a href="#"><span>my</span>podcast<img src="{% static 'images/play.png' %}" alt></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_content_row">
+
+                <div class="col-lg-4">
+                    <div class="footer_title">Tags</div>
+                    <div class="footer_list">
+                        <div>
+                            <div><a href="#">music</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">art</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">technology</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">travel & food</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">viral</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">social media</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">interview</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">developement</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">success</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">live</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">did you know?</a></div>
+                        </div>
+                        <div>
+                            <div><a href="#">health</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer_title">Latest Episodes</div>
+                    <div class="latest_container">
+
+                        <div class="latest">
+                            <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
+                                <a href="episode.html">
+                                    <div class="d-flex flex-row align-items-start justify-content-start">
+                                        <div class="latest_play">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                                                 x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714"
+                                                 style="enable-background:new 0 0 714 714;" xml:space="preserve">
+<g id="Play">
+<path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z"
+      fill="#FFFFFF"/>
+</g>
+</svg>
+                                        </div>
+                                        <div class="latest_title_content">
+                                            <div class="latest_title">Season 4 Episode 48 - A Step Further</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest_episode_info">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li><a href="#">September 24, 2018</a></li>
+                                    <li><a href="#">Music</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="latest">
+                            <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
+                                <a href="episode.html">
+                                    <div class="d-flex flex-row align-items-start justify-content-start">
+                                        <div class="latest_play">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                                                 x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714"
+                                                 style="enable-background:new 0 0 714 714;" xml:space="preserve">
+<g id="Play">
+<path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z"
+      fill="#FFFFFF"/>
+</g>
+</svg>
+                                        </div>
+                                        <div class="latest_title_content">
+                                            <div class="latest_title">Season 4 Episode 47 - Deep in Crypto</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest_episode_info">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li><a href="#">September 24, 2018</a></li>
+                                    <li><a href="#">Music</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="latest">
+                            <div class="latest_title_container d-flex flex-row align-items-start justify-content-start">
+                                <a href="episode.html">
+                                    <div class="d-flex flex-row align-items-start justify-content-start">
+                                        <div class="latest_play">
+                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                                                 x="0px" y="0px" width="512px" height="512px" viewBox="0 0 714 714"
+                                                 style="enable-background:new 0 0 714 714;" xml:space="preserve">
+<g id="Play">
+<path d="M641.045,318.521L102,0C73.822,0,51,22.822,51,51v612c0,28.178,22.822,51,51,51l539.045-318.521      C654.661,387.422,663,372.81,663,357C663,341.19,654.661,326.579,641.045,318.521z M153,565.386V148.614L505.665,357      L153,565.386z"
+      fill="#FFFFFF"/>
+</g>
+</svg>
+                                        </div>
+                                        <div class="latest_title_content">
+                                            <div class="latest_title">Season 4 Episode 46 - Nothing is real</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="latest_episode_info">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li><a href="#">September 24, 2018</a></li>
+                                    <li><a href="#">Music</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer_title">Instagram</div>
+                    <div class="gallery d-flex flex-row align-items-start justify-content-start flex-wrap">
+
+                        <div class="gallery_item">
+                            <a class="colorbox" href="{% static 'images/gallery_1_large.jpg' %}"><img src="{% static 'images/gallery_1.jpg' %}"
+                                                                                       alt></a>
+                        </div>
+
+                        <div class="gallery_item">
+                            <a class="colorbox" href="{% static 'images/gallery_2_large.jpg' %}"><img src="{% static 'images/gallery_2.jpg' %}"
+                                                                                       alt></a>
+                        </div>
+
+                        <div class="gallery_item">
+                            <a class="colorbox" href="{% static 'images/gallery_3_large.jpg' %}"><img src="{% static 'images/gallery_3.jpg' %}"
+                                                                                       alt></a>
+                        </div>
+
+                        <div class="gallery_item">
+                            <a class="colorbox" href="{% static 'images/gallery_4_large.jpg' %}"><img src="{% static 'images/gallery_4.jpg' %}"
+                                                                                       alt></a>
+                        </div>
+
+                        <div class="gallery_item">
+                            <a class="colorbox" href="{% static 'images/gallery_5_large.jpg' %}"><img src="{% static 'images/gallery_5.jpg' %}"
+                                                                                       alt></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_social_row">
+                <div class="col">
+                    <div class="footer_social">
+                        <ul class="d-flex flex-row align-items-center justify-content-center">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-soundcloud" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </br></br>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
+                href="https://colorlib.com/" target="_blank">Colorlib</a>
+
+        </div>
+    </footer>
+</div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
+<script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23581568-13');
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854"
+        integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg=="
+        data-cf-beacon='{"rayId":"80e4c981bdf10a3d","version":"2023.8.0","b":1,"token":"cd0b4b3a733644fc843ef0b185f98241","si":100}'
+        crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from preview.colorlib.com/theme/mypodcast/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Sep 2023 14:06:43 GMT -->
+</html>
