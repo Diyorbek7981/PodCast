@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block links %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/blog_responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/blog.css' %}">
+{% endblock links %}
+
 {% block content %}
 
     <div class="home">

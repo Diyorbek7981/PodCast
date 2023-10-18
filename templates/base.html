@@ -15,6 +15,8 @@
     <link href="{% static 'plugins/colorbox/colorbox.css' %}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+    {% block links %}
+    {% endblock links %}
     <script nonce="d6baea36-406c-4bba-b12d-71249f2ca57f">(function (w, d) {
         !function (a, b, c, d) {
             a[c] = a[c] || {};
@@ -348,6 +350,10 @@
 <script src="{% static 'plugins/colorbox/jquery.colorbox-min.js' %}"></script>
 <script src="{% static 'plugins/progressbar/progressbar.min.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
+<script src="{% static 'plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/episode.js' %}"></script>
 <script src="{% static 'js/custom.js' %}"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
